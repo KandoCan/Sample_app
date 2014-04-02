@@ -22,7 +22,7 @@ describe User do
 	it { should respond_to(:password_digest)}
 	it { should respond_to(:password)}
 	it { should respond_to(:password_confirmation)}
-	it { shoujld respond_to(:authenticate)}
+	it { should respond_to(:authenticate)}
 
 	it {should be_valid}
 
@@ -51,8 +51,8 @@ describe User do
 	end
 
 	describe "with a password that's too short" do
-		before { @user.password = @user.password_confirmation = "a" * 5}
-		it { should be_valid}
+		before { @user.password = @user.password_confirmation = "a" * 4}
+		it { should_not be_valid}
 	end
 
 	describe "when password is not present" do
